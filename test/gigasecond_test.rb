@@ -29,3 +29,6 @@ class GigasecondTest < Minitest::Test
     assert_equal Time.utc(2046, 10, 3, 1, 46, 39), Gigasecond.from(Time.utc(2015, 1, 24, 23, 59, 59))
   end
 end
+
+# TO run the test navigate to test directory and run
+# ruby -r minitest/pride gigasecond_test.rb
