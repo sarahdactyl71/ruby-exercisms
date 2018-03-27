@@ -1,7 +1,7 @@
 gem 'minitest'
 require 'minitest/autorun'
 require 'minitest/pride'
-require './lib/hamming'
+require '../lib/hamming'
 
 class HammingTest < Minitest::Test
 
@@ -22,3 +22,6 @@ class HammingTest < Minitest::Test
   # end
 
 end
+
+# TO run the test navigate to test directory and run
+# ruby -r minitest/pride hamming_test.rb
