@@ -11,6 +11,16 @@ class HammingTest < Minitest::Test
     assert_instance_of Hamming, hamming
   end
 
+  def test_strands_are_the_same_length
+    hamming = Hamming.new
+    first_strand = "fish"
+    second_strand = "boat"
+    third_strand = "submarine"
+
+    assert_equal true, hamming.equal_length(first_strand, second_strand)
+    assert_equal false, hamming.equal_length(first_strand, third_strand)
+  end
+
   # def test_character_map_is_complete
   #   e = Charactermap.new
   #
