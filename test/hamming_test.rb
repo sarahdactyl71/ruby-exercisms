@@ -4,11 +4,28 @@ require 'minitest/pride'
 require '../lib/hamming'
 
 class HammingTest < Minitest::Test
+  def test_empty_strands
+    hamming = Hamming.new
+
+    assert_equal 0, hamming.hamming_distance('', '')
+  end
+
+  def test_complete_distance_in_small_strands
+    hamming = Hamming.new
+
+    assert_equal 2, hamming.hamming_distance('AG', 'CT')
+  end
 
   def test_object_is_an_instance_of_hamming
     hamming = Hamming.new
 
     assert_instance_of Hamming, hamming
+  end
+
+  def test_large_distance_in_off_by_one_strand
+    hamming = Hamming.new
+
+    assert_equal 9, hamming.hamming_distance('GGACGGATTCTG', 'AGGACGGATTCT')
   end
 
   def test_strands_are_the_same_length
