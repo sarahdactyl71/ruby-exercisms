@@ -23,13 +23,11 @@ class Hamming
       strand_one = strand_one.chars
       strand_two = strand_two.chars
       distance = 0
-      # strand_one.each do |a|
-      #   strand_two.each do |b|
-      #     if a != b
-      #       distance += 1
-      #     end
-      #   end
-      # end
+      strand_one.zip(strand_two).each do |set|
+        if set.first != set.last
+          distance += 1
+        end
+      end
     end
     distance
   end
