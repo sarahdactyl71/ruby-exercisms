@@ -6,11 +6,32 @@
 #difference between the first strand of DNA and the second
 
 #Hamming can only happen with DNA strands of equal length
+class Hamming
 
-def equal_length(strand_one, strand_two)
-  if strand_one.length == strand_two.equal_length
-    true
-  else
-    false
+  def equal_length(strand_one, strand_two)
+    if strand_one.length == strand_two.length
+      true
+    else
+      false
+    end
   end
+
+  def hamming_distance(strand_one, strand_two)
+    if equal_length(strand_one, strand_two) == false
+      return "These strands aren't the same length."
+    else
+      strand_one = strand_one.chars
+      strand_two = strand_two.chars
+      distance = 0
+      # strand_one.each do |a|
+      #   strand_two.each do |b|
+      #     if a != b
+      #       distance += 1
+      #     end
+      #   end
+      # end
+    end
+    distance
+  end
+
 end
