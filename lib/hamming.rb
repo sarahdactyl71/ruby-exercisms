@@ -20,13 +20,17 @@ class Hamming
     if equal_length(strand_one, strand_two) == false
       return "These strands aren't the same length."
     else
-      strand_one = strand_one.chars
-      strand_two = strand_two.chars
-      distance = 0
-      strand_one.zip(strand_two).each do |set|
-        if set.first != set.last
-          distance += 1
-        end
+      determine_distance(strand_one, strand_two)
+    end
+  end
+
+  def determine_distance(strand_one, strand_two)
+    strand_one = strand_one.chars
+    strand_two = strand_two.chars
+    distance = 0
+    strand_one.zip(strand_two).each do |set|
+      if set.first != set.last
+        distance += 1
       end
     end
     distance
