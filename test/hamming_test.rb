@@ -21,6 +21,18 @@ class HammingTest < Minitest::Test
     assert_equal false, hamming.equal_length(first_strand, third_strand)
   end
 
+  def test_hamming_distance
+    hamming = Hamming.new
+    first_strand = "GAGCCTACTAACGGGAT"
+    second_strand = "GAGCCTACTAACGGGAT"
+    third_strand = "CATCGTAATGACGGCCT"
+    fourth_strand = "EckyEckyEckyKapangZoomPingAh"
+
+    assert_equal "These strands aren't the same length.", hamming.hamming_distance(first_strand, fourth_strand)
+    assert_equal 0, hamming.hamming_distance(first_strand, second_strand)
+    assert_equal 7, hamming.hamming_distance(first_strand, third_strand)
+  end
+
   # def test_character_map_is_complete
   #   e = Charactermap.new
   #
